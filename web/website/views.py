@@ -26,5 +26,5 @@ def contact(request):
         return render(request, 'contact.html')    
 
 # Create your views here.
-#new line added ygyug
+#new line adde
 
