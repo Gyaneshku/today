@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <title>Show Data</title>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+       <div class="col-lg-12 col-md-12 col-sm-12">
+      <h3 id="head" class="text-center">Show All Data</h3>
+        <h5 class="text-red text-right">
+        </h5>
+       </div>
+      </div>
+      <div class="row">
+       <div class="col-lg-12 col-md-12 col-sm-12">
+
+            <form action="/" class=" mb-2">
+                   <button id="SecondDiv" type="submit" class="btn btn-success mb-2 " style="float:right;" ><i class="fa fa-arrow-left"></i>  Back</button>
+        </form>
+
+       </div>
+      </div>
+      <div class="row">
+       <div class="col-lg-12 col-md-12 col-sm-12">
+    <div id="OneDiv">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <th>Employee</th>
+                <th>Phone</th>
+                <th>Employee Email</th>
+                <th>Message</th>
+                <th>Buttons</th>
+            </thead>
+            {% for d in data %}
+                <tr>
+                    <td>{{d.Name}}</td>
+                    <td>{{d.Phone}}</td>
+                    <td>{{d.Email}}</td>
+                    <td>{{d.Message}}</td>
+                    <td>
+
+                       <a class="btn btn-outline-primary" href="/edit?id={{d.ID}}" >Edit</a>
+                        <a class="btn btn-danger"  href="/delete?id={{d.ID}}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+       </div>
+      </div>
+  </div>
+
+</body>
+</html>
