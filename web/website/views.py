@@ -25,6 +25,6 @@ def contact(request):
     else:     
         return render(request, 'contact.html')    
 
-# Create your views here.
+# Create your views here and update.
 #new line adde
 
